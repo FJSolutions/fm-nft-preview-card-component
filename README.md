@@ -1,20 +1,19 @@
 # Frontend Mentor - NFT preview card component solution
 
-This is a solution to the [NFT preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/nft-preview-card-component-SbdUL_w0U). 
-Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to
+the [NFT preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/nft-preview-card-component-SbdUL_w0U).
+Frontend Mentor challenges help you improve your coding skills by building
+realistic projects.
 
 ## Table of contents
 
 - [Overview](#overview)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
+   - [Screenshot](#screenshot)
+   - [Links](#links)
 - [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
+   - [Built with](#built-with)
+   - [What I learned](#what-i-learned)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -31,7 +30,7 @@ Frontend Mentor challenges help you improve your coding skills by building reali
 ### Links
 
 - Solution URL: https://github.com/FJSolutions/fm-nft-preview-card-component
-- Live Site URL: 
+- Live Site URL: https://fbj-nft-preview-card-component.netlify.app/
 
 ## My process
 
@@ -40,95 +39,91 @@ Frontend Mentor challenges help you improve your coding skills by building reali
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- [LightningCSS](https://lightningcss.dev/) - For CSS
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+It was great to just just HTML and CSS and no JavaScript for a project so that I
+could focus on just the BEM aspect of the CSS. I used `lightningcss` as my css
+pre-processor as it provides the ability to easily divide the `css` files
+modularly (like in SMACSS - or more properly, ITCSS) and adds support for
+`@custom-media` variables.
 
-To see how you can add code snippets, see below:
+I didn't follow BEM to the letter; but I am sold on it as a methodology. It
+simplified (read flattened) the CSS and made both the CSS and HTML more
+readable. I ran into no specificity problems &ndash; though the project wasn't
+complicated.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+As you can see below I did use th nesting of an element within a BEM class (in
+this case the `:hover` style of the class), but Kevin Powell in his video on
+[Why I use the BEM naming convention for my CSS](https://youtu.be/SLjHSVwXYq4)
+indicates something similar.
+
+This code also contains deriving an `hsla` color from and `hasl` variable in
+standard CSS.
+
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+
+.card__image:hover > .card__image--view {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: absolute;
+   z-index: 1;
+   background-color: hsla(from var(--Cyan-400) h s l / 50%);
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   border-radius: 0.5rem;
+
+   img {
+      width: 3rem;
+      height: 3rem;
+   }
 }
+
 ```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Frontend Mentor &ndash; [Francis Judge](https://www.frontendmentor.io/profile/FJSolutions)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+## LightningCSS
 
-## Acknowledgments
+This is a reminder for setting up LightningCSS in a project.
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
-
-
-### LightningCSS
-
-Dependencies 
+### Dependencies
 
 ```shell
 pnpm add lightningcss browserslist -D
 ```
-Configuration
+
+### Configuration
 
 ```shell
 touch vite.config.ts
 ```
-
-Contents
+#### Config file contents
 
 ```ts
 import { browserslistToTargets } from 'lightningcss';
 import browserslist from 'browserslist';
 
 export default {
-  css: {
-    transformer: 'lightningcss',
-    lightningcss: {
-      targets: browserslistToTargets(browserslist('>= 0.25%')) // Target older browsers
-    }
-  },
-  build: {
-    cssMinify: 'lightningcss', // Use Lightning CSS for minification
-  }
+   css: {
+      transformer: 'lightningcss',
+      lightningcss: {
+         targets: browserslistToTargets(browserslist('>= 0.25%')), // Target older browsers
+        drafts: {
+          customMedia: true
+        }
+      }
+   },
+   build: {
+      cssMinify: 'lightningcss', // Use Lightning CSS for minification
+   }
 };
 
 ```
