@@ -1,0 +1,18 @@
+
+:root {
+   --Cyan-400: hsl(178, 100%, 50%);
+   --Blue-500: hsl(215, 51%, 70%);
+   --Blue-800: hsl(215, 32%, 27%);
+   --Blue-900: hsl(216, 50%, 16%);
+   --Blue-950: hsl(217, 54%, 11%);
+   --White: hsl(0, 0%, 100%);
+
+   --font-weight-light: 300;
+   --font-weight-regular: 400;
+   --font-weight-bold: 600;
+
+   --max-width: 64rem;
+}
+
+@custom-media --mobile-media (width < 64rem);
+@custom-media --desktop-media (minwidth: 64rem);

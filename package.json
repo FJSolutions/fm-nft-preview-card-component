@@ -1,13 +1,18 @@
 {
-  "name": "nft-preview-card-component-main",
-  "version": "0.1.0",
-  "description": "My implementation of Frontent Mentor's NFT card compenent using BEM",
-  "main": "index.js",
+  "name": "fbj-nft-preview-card-component",
+  "description": "My implementation of Frontend Mentor's NFT card component using BEM",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "keywords": [],
-  "author": "Francis Judge <fjudge7@gmail.com>",
-  "license": "MIT",
-  "packageManager": "pnpm@10.27.0"
+  "devDependencies": {
+    "browserslist": "^4.28.2",
+    "lightningcss": "^1.32.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.0.9"
+  }
 }

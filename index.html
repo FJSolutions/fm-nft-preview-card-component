@@ -1,33 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | NFT preview card component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+   <meta charset="UTF-8"/>
+   <meta name="description" content="Francis Judge's implementation of Frontend Mentor's NFT card component using BEM">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <link rel="icon" type="image/svg+xml" href="/images/favicon-32x32.png"/>
+   <link rel="stylesheet" href="./src/styles/main.css">
+   <title>NFT Preview Card Component</title>
 </head>
 <body>
-
-  Equilibrium #3429
-
-  Our Equilibrium collection promotes balance and calm.
-
-  0.041 ETH
-  3 days left
-  
-  Creation of Jules Wyvern
-
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </footer>
+<main>
+   <section class="card">
+      <div class="card__image">
+         <img src="/images/image-equilibrium.jpg" alt="Equilibrium #3429" width="604" height="604"/>
+         <div class="card__image--view">
+            <img alt="view Equilibrium #3429" src="/images/icon-view.svg" width="64" height="64"/>
+         </div>
+      </div>
+      <h1 class="card__title">Equilibrium #3429</h1>
+      <p class="card__description">Our Equilibrium collection promotes balance and calm.</p>
+      <div class="card__detail">
+         <p class="card__detail-nft">
+            <img src="/images/icon-ethereum.svg" alt="Ethereum" width="64" height="64"/>
+            <span>0.041 ETH</span>
+         </p>
+         <p class="card__detail-time">
+            <img src="/images/icon-clock.svg" alt="time left">
+            <span>3 days left</span>
+         </p>
+      </div>
+      <div class="card__avatar">
+         <img src="/images/image-avatar.png" alt="Jules Wyvern" width="132" height="132"/>
+         <p>
+            Creation of
+            <span class="card__avatar-name">Jules Wyvern</span>
+         </p>
+      </div>
+   </section>
+</main>
 </body>
 </html>

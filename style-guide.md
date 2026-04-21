@@ -35,3 +35,15 @@ The designs were created to the following widths:
 - Weights: 300, 400, 600
 
 > 💎 [Upgrade to Pro](https://www.frontendmentor.io/pro?ref=style-guide) for design file access to see all design details and get hands-on experience using a professional workflow with tools like Figma.
+## HTML
+
+```text
+Equilibrium #3429
+
+Our Equilibrium collection promotes balance and calm.
+
+0.041 ETH
+3 days left
+
+Creation of Jules Wyvern
+```
